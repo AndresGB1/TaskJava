@@ -1,0 +1,51 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter
+    implementation 'org.springframework.boot:spring-boot-starter:2.7.0'
+
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/auth
+    implementation 'software.amazon.awssdk:auth:2.17.202'
+
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/athena
+    implementation 'software.amazon.awssdk:athena:2.17.202'
+    // https://mvnrepository.com/artifact/software.amazon.awssdk/lambda
+    implementation 'software.amazon.awssdk:lambda:2.18.28'
+
+    implementation 'software.amazon.awssdk:url-connection-client:2.18.31'
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk
+    implementation 'com.amazonaws:aws-java-sdk:1.12.231'
+
+    // https://mvnrepository.com/artifact/com.amazonaws/aws-lambda-java-core
+    implementation 'com.amazonaws:aws-lambda-java-core:1.2.1'
+    testImplementation 'org.projectlombok:lombok:1.18.22'
+
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+
+    implementation 'com.google.code.gson:gson:2.10'
+
+    // https://mvnrepository.com/artifact/org.mockito/mockito-junit-jupiter
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.9.0'
+    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.1'
+    // https://mvnrepository.com/artifact/org.mockito/mockito-inline
+    testImplementation group: 'org.mockito', name: 'mockito-inline', version: '3.10.0'
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+test {
+    useJUnitPlatform()
+}
